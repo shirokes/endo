@@ -654,210 +654,40 @@ td.notes {
     <script>
         // Billing codes data
         const billingCodes = [
-                    {
-                                "category": "Upper Endoscopy",
-                                "procedure": "EGD",
-                                "code": "3123",
-                                "notes": "135.97"
-                    },
-                    {
-                                "category": "Upper Endoscopy",
-                                "procedure": "EGD + polypectomy",
-                                "code": "3122",
-                                "notes": "216.46"
-                    },
-                    {
-                                "category": "Upper Endoscopy",
-                                "procedure": "EGD with foreign body removal",
-                                "code": "3057",
-                                "notes": "196.19"
-                    },
-                    {
-                                "category": "Upper Endoscopy",
-                                "procedure": "Push enteroscopy",
-                                "code": "3190",
-                                "notes": "241.69"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Colonoscopy",
-                                "code": "3185",
-                                "notes": "205.96"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Colonoscopy + biopsy",
-                                "code": "3186",
-                                "notes": "216.16"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Colonoscopy with polypectomy snare",
-                                "code": "3187",
-                                "notes": "314.39"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Colonoscopy with polypectomy using cauteruy",
-                                "code": "3189",
-                                "notes": "314.39"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Extra polyp",
-                                "code": "3188",
-                                "notes": "76.07"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "TI intubation",
-                                "code": "3196",
-                                "notes": "22.28"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Flex sig - 25-65cm",
-                                "code": "3320",
-                                "notes": "87.29"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Flex sig with removal of single polyp",
-                                "code": "3323",
-                                "notes": "115.48"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Flex sig - additional polyp",
-                                "code": "3324",
-                                "notes": "45.44"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Flex sig < 25cm",
-                                "code": "3311",
-                                "notes": "57.43"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Flex sig < 25cm with biopsy",
-                                "code": "3313",
-                                "notes": "66.22"
-                    },
-                    {
-                                "category": "Upper Endoscopy",
-                                "procedure": "10+ biopsies",
-                                "code": "3013",
-                                "notes": "39.41"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Flex sig < 25cm with removal of single lesion",
-                                "code": "3315",
-                                "notes": "92.37"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "Flex sig < 25cm with removal of multiple lesions",
-                                "code": "3317",
-                                "notes": "114.69"
-                    },
-                    {
-                                "category": "Endo Modifiers",
-                                "procedure": "Balloon dilation",
-                                "code": "3000",
-                                "notes": "106.66"
-                    },
-                    {
-                                "category": "Endo Modifiers",
-                                "procedure": "Botox Injection",
-                                "code": "3002",
-                                "notes": "53.53"
-                    },
-                    {
-                                "category": "Endo Modifiers",
-                                "procedure": "Hemostasis",
-                                "code": "3004",
-                                "notes": "123.05"
-                    },
-                    {
-                                "category": "Endo Modifiers",
-                                "procedure": "Hemodynamic instability",
-                                "code": "3006",
-                                "notes": "56.28"
-                    },
-                    {
-                                "category": "Endo Modifiers",
-                                "procedure": "Placement of postpyloric feeding tube",
-                                "code": "3008",
-                                "notes": "86.48"
-                    },
-                    {
-                                "category": "Lower Endoscopy",
-                                "procedure": "10 or more biopsies",
-                                "code": "3012",
-                                "notes": "64.82"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Consult + EGD + 10+ biopsies",
-                                "code": "0005, 8550, 8380, 3123, 3013, 2651",
-                                "notes": "codes include tray fee but billing subtracts this"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Consult + Colon",
-                                "code": "0005, 8550, 8380, 3185, 2651 ",
-                                "notes": "codes include tray fee but billing subtracts this"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Consult, Colon, 1 polyp",
-                                "code": "0005, 8550, 8380, 3187, 2651",
-                                "notes": "codes include tray fee but billing subtracts this"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Consult + colon + biopsy",
-                                "code": "0005, 8550, 8380, 3186, 2651 ",
-                                "notes": ""
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Consult + Double + 10 EGD biopsies",
-                                "code": "0005, 0005, 8550, 8380, 3123, 3013, 3185, 2651",
-                                "notes": "includes sedation, tray feex2, community supplement"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Extra colon polyp",
-                                "code": "3188",
-                                "notes": "Max 4"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "TI intubation",
-                                "code": "3196",
-                                "notes": ""
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "10+ biopsies in colon",
-                                "code": "3012",
-                                "notes": "Only works for 3186 or 3187"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Endoscopy Tray Fee",
-                                "code": "5",
-                                "notes": "Can bill x 2 if doing EGD+colon"
-                    },
-                    {
-                                "category": "Prairie Shortcuts",
-                                "procedure": "Procedural sedation",
-                                "code": "2651",
-                                "notes": "Can only bill once per case"
-                    }
+            { category: "Upper Endoscopy", procedure: "EGD", code: "3123", fee: "135.97", notes: "" },
+            { category: "Upper Endoscopy", procedure: "EGD + polypectomy", code: "3122", fee: "216.46", notes: "" },
+            { category: "Upper Endoscopy", procedure: "EGD with foreign body removal", code: "3057", fee: "196.19", notes: "" },
+            { category: "Upper Endoscopy", procedure: "Push enteroscopy", code: "3190", fee: "241.69", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Colonoscopy", code: "3185", fee: "205.96", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Colonoscopy + biopsy", code: "3186", fee: "216.16", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Colonoscopy with polypectomy snare", code: "3187", fee: "314.39", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Colonoscopy with polypectomy using cauteruy", code: "3189", fee: "314.39", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Extra polyp", code: "3188", fee: "76.07", notes: "Can add to 3187 or 3189. Max 4" },
+            { category: "Lower Endoscopy", procedure: "TI intubation", code: "3196", fee: "22.28", notes: "Must be symptomatic (abd pain, diarrhea, bleeding etc)" },
+            { category: "Lower Endoscopy", procedure: "Flex sig - 25-65cm", code: "3320", fee: "87.29", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Flex sig with removal of single polyp", code: "3323", fee: "115.48", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Flex sig - additional polyp", code: "3324", fee: "45.44", notes: "Up to 4 extra polyps" },
+            { category: "Lower Endoscopy", procedure: "Flex sig < 25cm", code: "3311", fee: "57.43", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Flex sig < 25cm with biopsy", code: "3313", fee: "66.22", notes: "" },
+            { category: "Upper Endoscopy", procedure: "10+ biopsies", code: "3013", fee: "39.41", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Flex sig < 25cm with removal of single lesion", code: "3315", fee: "92.37", notes: "" },
+            { category: "Lower Endoscopy", procedure: "Flex sig < 25cm with removal of multiple lesions", code: "3317", fee: "114.69", notes: "" },
+            { category: "Endo Modifiers", procedure: "Balloon dilation", code: "3000", fee: "106.66", notes: "" },
+            { category: "Endo Modifiers", procedure: "Botox Injection", code: "3002", fee: "53.53", notes: "" },
+            { category: "Endo Modifiers", procedure: "Hemostasis", code: "3004", fee: "123.05", notes: "" },
+            { category: "Endo Modifiers", procedure: "Hemodynamic instability", code: "3006", fee: "56.28", notes: "one or more of:  HR>100, BP< 80, Hb<80, ongoing bleeding" },
+            { category: "Endo Modifiers", procedure: "Placement of postpyloric feeding tube", code: "3008", fee: "86.48", notes: "" },
+            { category: "Lower Endoscopy", procedure: "10 or more biopsies", code: "3012", fee: "64.82", notes: "For upper gi, use 3013" },
+            { category: "Prairie Shortcuts", procedure: "Consult + EGD + 10+ biopsies", code: "0005, 8550, 8380, 3123, 3013, 2651", fee: "", notes: "codes include tray fee but billing subtracts this" },
+            { category: "Prairie Shortcuts", procedure: "Consult + Colon", code: "0005, 8550, 8380, 3185, 2651 ", fee: "", notes: "codes include tray fee but billing subtracts this" },
+            { category: "Prairie Shortcuts", procedure: "Consult, Colon, 1 polyp", code: "0005, 8550, 8380, 3187, 2651", fee: "", notes: "codes include tray fee but billing subtracts this" },
+            { category: "Prairie Shortcuts", procedure: "Consult + colon + biopsy", code: "0005, 8550, 8380, 3186, 2651 ", fee: "", notes: "" },
+            { category: "Prairie Shortcuts", procedure: "Consult + Double + 10 EGD biopsies", code: "0005, 0005, 8550, 8380, 3123, 3013, 3185, 2651", fee: "", notes: "includes sedation, tray feex2, community supplement" },
+            { category: "Prairie Shortcuts", procedure: "Extra colon polyp", code: "3188", fee: "76.07", notes: "Max 4" },
+            { category: "Prairie Shortcuts", procedure: "TI intubation", code: "3196", fee: "22.28", notes: "" },
+            { category: "Prairie Shortcuts", procedure: "10+ biopsies in colon", code: "3012", fee: "64.82", notes: "Only works for 3186 or 3187" },
+            { category: "Prairie Shortcuts", procedure: "Endoscopy Tray Fee", code: "5", fee: "", notes: "Can bill x 2 if doing EGD+colon" },
+            { category: "Prairie Shortcuts", procedure: "Procedural sedation", code: "2651", fee: "", notes: "Can only bill once per case" }
         ];;
 
         // State management
