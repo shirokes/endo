@@ -277,7 +277,246 @@
     </div>
 
     <script>
-        const billingData = [{"Category": "Upper Endoscopy", "Procedure": "EGD", "Code": "3123", "Fee": "135.97", "Notes": ""}, {"Category": "Upper Endoscopy", "Procedure": "EGD + polypectomy", "Code": "3122", "Fee": "216.46", "Notes": ""}, {"Category": "Upper Endoscopy", "Procedure": "EGD with foreign body removal", "Code": "3057", "Fee": "196.19", "Notes": ""}, {"Category": "Upper Endoscopy", "Procedure": "Push enteroscopy", "Code": "3190", "Fee": "241.66", "Notes": ""}, {"Category": "Upper Endoscopy", "Procedure": "10+ biopsies", "Code": "3013", "Fee": "37.50", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Colonoscopy", "Code": "3185", "Fee": "205.96", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Colonoscopy + biopsy", "Code": "3186", "Fee": "216.16", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Colonoscopy with polypectomy snare", "Code": "3187", "Fee": "314.39", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Colonoscopy with polypectomy using cauteruy", "Code": "3189", "Fee": "314.39", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Extra polyp", "Code": "3188", "Fee": "76.07", "Notes": "Can add to 3187 or 3189. Max 4"}, {"Category": "Lower Endoscopy", "Procedure": "TI intubation", "Code": "3196", "Fee": "22.28", "Notes": "Must be symptomatic (abd pain, diarrhea, bleeding etc)"}, {"Category": "Lower Endoscopy", "Procedure": "Flex sig - 25-65cm", "Code": "3320", "Fee": "87.29", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Flex sig with removal of single polyp", "Code": "3323", "Fee": "115.48", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Flex sig - additional polyp", "Code": "3324", "Fee": "45.44", "Notes": "Up to 4 extra polyps"}, {"Category": "Lower Endoscopy", "Procedure": "Flex sig < 25cm", "Code": "3311", "Fee": "57.43", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Flex sig < 25cm with biopsy", "Code": "3313", "Fee": "63.65", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Flex sig < 25cm with removal of single lesion", "Code": "3315", "Fee": "87.90", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "Flex sig < 25cm with removal of multiple lesions", "Code": "3317", "Fee": "109.15", "Notes": ""}, {"Category": "Lower Endoscopy", "Procedure": "10 or more biopsies", "Code": "3012", "Fee": "64.82", "Notes": "For upper gi, use 3013"}, {"Category": "Modifiers", "Procedure": "Balloon dilation", "Code": "3000", "Fee": "101.50", "Notes": ""}, {"Category": "Modifiers", "Procedure": "Botox Injection", "Code": "3002", "Fee": "51.45", "Notes": ""}, {"Category": "Modifiers", "Procedure": "Hemostasis", "Code": "3004", "Fee": "117.10", "Notes": ""}, {"Category": "Modifiers", "Procedure": "Hemodynamic instability", "Code": "3006", "Fee": "54.10", "Notes": "one or more of: HR>100, BP< 80, Hb<80, ongoing bleeding"}, {"Category": "Modifiers", "Procedure": "Placement of postpyloric feeding tube", "Code": "3008", "Fee": "82.30", "Notes": ""}, {"Category": "Prairie Shortcuts", "Procedure": "Consult + EGD + 10+ biopsies", "Code": "0005, 8550, 8380, 3123, 3013, 2651", "Fee": "362.71", "Notes": "codes include tray fee but billing subtracts this"}, {"Category": "Prairie Shortcuts", "Procedure": "Consult + Colon", "Code": "0005, 8550, 8380, 3185, 2651", "Fee": "395.20", "Notes": "codes include tray fee but billing subtracts this"}, {"Category": "Prairie Shortcuts", "Procedure": "Consult, Colon, 1 polyp", "Code": "0005, 8550, 8380, 3187, 2651", "Fee": "503.63", "Notes": "codes include tray fee but billing subtracts this"}, {"Category": "Prairie Shortcuts", "Procedure": "Consult + colon + biopsy", "Code": "3186", "Fee": "405.40", "Notes": ""}, {"Category": "Prairie Shortcuts", "Procedure": "Consult + Double + 10 EGD biopsies", "Code": "0005, 0005, 8550, 8380, 3123, 3013, 3175, 2651", "Fee": "568.67", "Notes": "includes sedation, tray feex2, community supplement"}, {"Category": "Prairie Shortcuts", "Procedure": "Extra colon polyp", "Code": "3188", "Fee": "73.12", "Notes": "Max 4"}, {"Category": "Prairie Shortcuts", "Procedure": "TI intubation", "Code": "3196", "Fee": "21.41", "Notes": ""}, {"Category": "Prairie Shortcuts", "Procedure": "10+ biopsies in colon", "Code": "3012", "Fee": "62.30", "Notes": "Only works for 3186 or 3187"}, {"Category": "Prairie Shortcuts", "Procedure": "Endoscopy Tray Fee", "Code": "5", "Fee": "197.68", "Notes": "Can bill x 2 if doing EGD+colon"}, {"Category": "Prairie Shortcuts", "Procedure": "Procedural sedation", "Code": "2651", "Fee": "5202.00", "Notes": "Can only bill once per case"}];;
+        const billingData = [
+        {
+                "Category": "Upper Endoscopy",
+                "Procedure": "EGD",
+                "Code": "3123",
+                "Fee": "135.97",
+                "Notes": ""
+        },
+        {
+                "Category": "Upper Endoscopy",
+                "Procedure": "EGD + polypectomy",
+                "Code": "3122",
+                "Fee": "216.46",
+                "Notes": ""
+        },
+        {
+                "Category": "Upper Endoscopy",
+                "Procedure": "EGD with foreign body removal",
+                "Code": "3057",
+                "Fee": "196.19",
+                "Notes": ""
+        },
+        {
+                "Category": "Upper Endoscopy",
+                "Procedure": "Push enteroscopy",
+                "Code": "3190",
+                "Fee": "241.66",
+                "Notes": ""
+        },
+        {
+                "Category": "Upper Endoscopy",
+                "Procedure": "10+ biopsies",
+                "Code": "3013",
+                "Fee": "37.50",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Colonoscopy",
+                "Code": "3185",
+                "Fee": "205.96",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Colonoscopy + biopsy",
+                "Code": "3186",
+                "Fee": "216.16",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Colonoscopy with polypectomy snare",
+                "Code": "3187",
+                "Fee": "314.39",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Colonoscopy with polypectomy using cauteruy",
+                "Code": "3189",
+                "Fee": "314.39",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Extra polyp",
+                "Code": "3188",
+                "Fee": "76.07",
+                "Notes": "Can add to 3187 or 3189. Max 4"
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "TI intubation",
+                "Code": "3196",
+                "Fee": "22.28",
+                "Notes": "Must be symptomatic (abd pain, diarrhea, bleeding etc)"
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Flex sig - 25-65cm",
+                "Code": "3320",
+                "Fee": "87.29",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Flex sig with removal of single polyp",
+                "Code": "3323",
+                "Fee": "115.48",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Flex sig - additional polyp",
+                "Code": "3324",
+                "Fee": "45.44",
+                "Notes": "Up to 4 extra polyps"
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Flex sig < 25cm",
+                "Code": "3311",
+                "Fee": "57.43",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Flex sig < 25cm with biopsy",
+                "Code": "3313",
+                "Fee": "63.65",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Flex sig < 25cm with removal of single lesion",
+                "Code": "3315",
+                "Fee": "87.90",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "Flex sig < 25cm with removal of multiple lesions",
+                "Code": "3317",
+                "Fee": "109.15",
+                "Notes": ""
+        },
+        {
+                "Category": "Lower Endoscopy",
+                "Procedure": "10 or more biopsies",
+                "Code": "3012",
+                "Fee": "64.82",
+                "Notes": "For upper gi, use 3013"
+        },
+        {
+                "Category": "Modifiers",
+                "Procedure": "Balloon dilation",
+                "Code": "3000",
+                "Fee": "101.50",
+                "Notes": ""
+        },
+        {
+                "Category": "Modifiers",
+                "Procedure": "Botox Injection",
+                "Code": "3002",
+                "Fee": "51.45",
+                "Notes": ""
+        },
+        {
+                "Category": "Modifiers",
+                "Procedure": "Hemostasis",
+                "Code": "3004",
+                "Fee": "117.10",
+                "Notes": ""
+        },
+        {
+                "Category": "Modifiers",
+                "Procedure": "Hemodynamic instability",
+                "Code": "3006",
+                "Fee": "54.10",
+                "Notes": "one or more of: HR>100, BP< 80, Hb<80, ongoing bleeding"
+        },
+        {
+                "Category": "Modifiers",
+                "Procedure": "Placement of postpyloric feeding tube",
+                "Code": "3008",
+                "Fee": "82.30",
+                "Notes": ""
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Consult + EGD + 10+ biopsies",
+                "Code": "0005, 8550, 8380, 3123, 3013, 2651",
+                "Fee": "362.71",
+                "Notes": "codes include tray fee but billing subtracts this"
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Consult + Colon",
+                "Code": "0005, 8550, 8380, 3185, 2651",
+                "Fee": "395.20",
+                "Notes": "codes include tray fee but billing subtracts this"
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Consult, Colon, 1 polyp",
+                "Code": "0005, 8550, 8380, 3187, 2651",
+                "Fee": "503.63",
+                "Notes": "codes include tray fee but billing subtracts this"
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Consult + colon + biopsy",
+                "Code": "3186",
+                "Fee": "405.40",
+                "Notes": ""
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Consult + Double + 10 EGD biopsies",
+                "Code": "0005, 0005, 8550, 8380, 3123, 3013, 3175, 2651",
+                "Fee": "568.67",
+                "Notes": "includes sedation, tray feex2, community supplement"
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Extra colon polyp",
+                "Code": "3188",
+                "Fee": "73.12",
+                "Notes": "Max 4"
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "TI intubation",
+                "Code": "3196",
+                "Fee": "21.41",
+                "Notes": ""
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "10+ biopsies in colon",
+                "Code": "3012",
+                "Fee": "62.30",
+                "Notes": "Only works for 3186 or 3187"
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Endoscopy Tray Fee",
+                "Code": "5",
+                "Fee": "197.68",
+                "Notes": "Can bill x 2 if doing EGD+colon"
+        },
+        {
+                "Category": "Prairie Shortcuts",
+                "Procedure": "Procedural sedation",
+                "Code": "2651",
+                "Fee": "5202.00",
+                "Notes": "Can only bill once per case"
+        }
+];;
 
         const searchInput = document.getElementById('search');
         const categorySelect = document.getElementById('category');
@@ -320,7 +559,8 @@
             }
 
             resultsContainer.innerHTML = filteredData.map(item => {
-                
+                const hasBMI = item['BMI code'] !== 'n/a' && item['BMI code'] !== null;
+                const hasLap = item['Lap code'] !== 'n/a' && item['Lap code'] !== null;
                 const hasNotes = item.Notes !== 'n/a' && item.Notes !== null;
 
                 return `
@@ -335,7 +575,17 @@
                                 <span class="code-label">Code:</span>
                                 <span>${item.Code}</span>
                             </div>
-                            
+                            ${hasBMI ? `
+                                <div class="code-chip" onclick="copyCode('${item['BMI code']}', 'BMI Code')">
+                                    <span class="code-label">BMI:</span>
+                                    <span>${item['BMI code']}</span>
+                                </div>
+                            ` : ''}
+                            ${hasLap ? `
+                                <div class="code-chip" onclick="copyCode('${item['Lap code']}', 'Lap Code')">
+                                    <span class="code-label">Lap:</span>
+                                    <span>${item['Lap code']}</span>
+                                </div>
                             ` : ''}
                         </div>
 
